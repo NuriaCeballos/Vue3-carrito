@@ -22,7 +22,7 @@
 <script>
 // @ is an alias to /src
 
-
+import {ref} from 'vue'
 import Item from '@/components/Item.vue'
 
 export default {
@@ -32,13 +32,13 @@ export default {
     Item
   },
   setup(){
-    const articulos=[
+    const articulos=ref([
       
-        {nombre:"llave-fija",descripcion:"numero 2",imagen:"avatar.jpg",precio:20.30},
-        {nombre:"martillo",descripcion:"carpintero",imagen:"avatar.jpg",precio:30.50},
-        {nombre:"destornillador",descripcion:"plano",imagen:"avatar.jpg",precio:13.20} 
+        {nombre:"llave-fija",descripcion:"numero 2",imagen: require("@/assets/llavefija.jpg"),precio:20.30},
+        {nombre:"martillo",descripcion:"carpintero",imagen: require("@/assets/martillo.jpg"),precio:30.50},
+        {nombre:"destornillador",descripcion:"plano",imagen: require("@/assets/destornillador.jpg"),precio:13.20} 
       
-    ]
+    ])
     return{
       articulos
     }
